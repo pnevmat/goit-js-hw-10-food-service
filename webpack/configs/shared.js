@@ -44,8 +44,15 @@ module.exports = env => ({
                   speed: 2
                 }),
                 require('imagemin-svgo')({
+                  destination: 'build/images',
                   plugins: [
                     { removeTitle: true },
+                    { removeDoctype: true },
+                    { removeXMLProcInst: true },
+                    { removeComments: true },
+                    { removeMetadata: true },
+                    { removeEditorsNSData: true },
+                    { cleanupAttrs: true },
                     { convertPathData: false }
                   ]
                 })
